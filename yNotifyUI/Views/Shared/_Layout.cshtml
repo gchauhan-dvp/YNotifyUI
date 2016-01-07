@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Y-Notify</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script src="~/app/Scripts/jquery.min.js"></script>
+</head>
+<body>
+    <div id="home" class="header">
+        <div class="header-top">
+            <div class="container">
+                <span class="menu"></span>
+                <div class="top-menu">
+                    <ul class="cl-effect-16">
+                        <li><a class="active" href="#" data-hover="Client">Client</a></li>
+                        <li><a href="#" data-hover="Templates">Templates</a></li>
+                        <li><a href="#" data-hover="Reports">Reports</a></li>
+                        <li><a href="#" data-hover="Test">Test</a></li>
+                    </ul>
+                    <span class="loginbtn">@Html.Partial("_LoginPartial")</span>
+                </div>
+                <!-- script-for-menu -->
+                <script>
+				$( "span.menu" ).click(function() {
+				  $( ".top-menu" ).slideToggle( "slow", function() {
+				    // Animation complete.
+				  });
+				});
+                </script>
+               
+                <div class="clearfix"></div>
+                <!--End-top-nav-script-->
+            </div>
+        </div>
+        <div class="header-middle">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>Y-Notify</h1></a>
+                </div>
+                <div class="header-top-right">
+                   
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
